@@ -5,18 +5,11 @@ const profileData = {
   bio: "Creating beautiful web experiences",
 };
 
-import { Image } from "astro:assets";
 import bioImage from "../images/headshot_2025.png";
 ---
 
 <header class="profile-header">
-  <Image
-    class="profile-image"
-    src={bioImage}
-    alt="Profile Image"
-    width={128}
-    height={128}
-  />
+  <img class="profile-image" src={bioImage.src} alt="Profile Image" />
   <h1 class="name">{profileData.name}</h1>
   <p class="tagline">{profileData.tagline}</p>
   <p class="bio">{profileData.bio}</p>
@@ -34,6 +27,8 @@ import bioImage from "../images/headshot_2025.png";
   .profile-image {
     border-radius: 100%;
     object-fit: cover;
+    width: 128px;
+    height: 128px;
   }
   .name {
     font-size: 1.75rem;
