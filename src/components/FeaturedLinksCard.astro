@@ -1,0 +1,59 @@
+---
+import { Icon } from "astro-icon/components";
+const { title, url, description, icon } = Astro.props;
+---
+
+<a href={url} target="_blank" class="featured-card">
+  <div class="icon-wrapper">
+    <Icon name={icon} />
+  </div>
+  <div class="content">
+    <span class="title">{title}</span>
+    <span class="description">{description}</span>
+  </div>
+</a>
+
+<style>
+  .featured-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background-color: #7f13ec10;
+    text-decoration: none;
+    border-radius: 2rem;
+    color: #fff;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2 ease;
+  }
+  .featured-card:hover {
+    transform: scale(1.02);
+    background-color: #7f13ec20;
+    outline: 2px solid #7f13ec;
+    outline-offset: 2px;
+  }
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    background-color: #7f13ec;
+    color: #fff;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .description {
+    font-size: 0.875rem;
+  }
+</style>
