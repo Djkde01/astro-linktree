@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon/components";
+const { title, url, icon } = Astro.props;
+---
+
+<a href={url} target="_blank" class="link-card">
+  <Icon name={icon} />
+  <span class="title">
+    {title}
+  </span>
+</a>
+
+<style>
+  .link-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: #302839;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 2rem;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2 ease;
+  }
+  .link-card:hover {
+    background-color: #5c5069;
+    outline: 2px solid #7f13ec;
+    outline-offset: 2px;
+  }
+
+  .title {
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+import LinkCard from "./LinkCard.astro";
+
+const links =[
+
+   { title: "Follow me on X (Twitter)", url: "https://x.com/", icon: "mdi:twitter" },
+  {
+    title: "Connect on LinkedIn",
+    url: "https://www.linkedin.com/",
+    icon: "mdi:linkedin",
+  },
+  {
+    title: "Read my Medium articles",
+    url: "https://medium.com/",
+    icon: "mdi:medium",
+  },
+  { title: "Visit my Website", url: "https://example.com", icon: "mdi:web" },
+];
+---
+
+<section class="all-links-section">
+    <h2 class="section-title">Todos mis links</h2>
+
+    {
+        links.map(link => <LinkCard title={link.title} url={link.url} icon={link.icon}/>)
+    }
+</section>
+
+<style>
+    .all-links-section{
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .section-title{
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+</style>
