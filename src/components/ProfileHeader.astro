@@ -1,0 +1,52 @@
+---
+const profileData = {
+  name: "Sergio Estrella",
+  tagline: "Fullstack Developer",
+  bio: "Creating beautiful web experiences",
+};
+
+import { Image } from "astro:assets";
+import bioImage from "../images/headshot_2025.png";
+---
+
+<header class="profile-header">
+  <Image
+    class="profile-image"
+    src={bioImage}
+    alt="Profile Image"
+    width={128}
+    height={128}
+  />
+  <h1 class="name">{profileData.name}</h1>
+  <p class="tagline">{profileData.tagline}</p>
+  <p class="bio">{profileData.bio}</p>
+</header>
+
+<style>
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 0.75rem;
+    padding: 0 1rem;
+  }
+  .profile-image {
+    border-radius: 100%;
+    object-fit: cover;
+  }
+  .name {
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+  .tagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ab9db9;
+  }
+  .bio {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #ab9db9;
+  }
+</style>
